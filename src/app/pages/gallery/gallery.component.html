@@ -1,0 +1,17 @@
+<div class="gallery">
+  <!-- Loop through images and display thumbnails -->
+  <div *ngFor="let image of images" class="image-item">
+    <img [src]="image.thumbnail" [alt]="image.description" (click)="openModal(image)" />
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" [ngClass]="{ 'open': isModalOpen }" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()"> <!-- Prevent closing when clicking on content -->
+    <button class="prev-btn" (click)="changeImage('prev')">‹</button>
+    <img [src]="selectedImage.full" [alt]="selectedImage.description" />
+    <button class="next-btn" (click)="changeImage('next')">›</button>
+    <div class="description">{{ selectedImage.description }}</div>
+    <button class="close-btn" (click)="closeModal()">×</button>
+  </div>
+</div>

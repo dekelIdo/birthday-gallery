@@ -1,0 +1,104 @@
+/* Global reset for some styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif; /* Elegant font choice */
+  }
+  
+  /* Navbar container */
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Space between brand and links */
+    align-items: center; /* Vertically center content */
+    padding: 15px 30px;
+    background-color: #dab0c8; /* Soft pink background color */
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid #e1a7b7; /* Soft border to add elegance */
+  }
+  
+  /* Navbar brand styles */
+  .navbar-brand {
+    color: #92565e; /* Soft pink color */
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+  
+  /* Container for navbar links */
+  .navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* List of navigation links */
+  .navbar-links ul {
+    display: flex;
+    gap: 30px; /* Space between nav items */
+    list-style-type: none;
+  }
+  
+  .navbar-links .nav-link {
+    color: #6d4c4f; /* Gentle, neutral brown color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Active link and hover effect */
+  .navbar-links .nav-link:hover,
+  .navbar-links .nav-link.active {
+    color: #55122b; /* Light pink for hover and active state */
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar-brand {
+      text-align: center; /* Center the brand on small screens */
+      margin-bottom: 20px; /* Add space below the brand */
+    }
+  
+    .navbar-links ul {
+      flex-direction: column; /* Stack nav items vertically */
+      gap: 15px; /* Adjust spacing between nav items */
+      align-items: center; /* Center nav items */
+    }
+  
+    .navbar-links .nav-link {
+      font-size: 1.4rem; /* Increase font size for small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 10px 20px; /* Smaller padding for very small screens */
+    }
+  
+    .navbar-brand {
+      font-size: 1.8rem; /* Adjust font size for smaller screens */
+    }
+  
+    .navbar-links ul {
+      gap: 10px; /* Adjust space between items for mobile */
+    }
+  
+    .navbar-links .nav-link {
+      font-size: 1.3rem; /* Slightly smaller font size on very small screens */
+    }
+  }
+  
