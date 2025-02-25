@@ -1,56 +1,37 @@
-/* Ensure the gallery layout is responsive and centered */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+.image-item {
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
+    cursor: pointer;
   }
-  
-  .gallery{
-    .image-item{
-        img{
-            max-height: 270px;
-        }
-    }
-      img {
-          width: 100%;
-          max-width: 200px; /* Control image size */
-          height: auto;
-          cursor: pointer;
-          transition: transform 0.3s ease-in-out;
-          
-        }
-    } 
-  
-  /* Hover effect on the thumbnails */
-  .gallery img:hover {
+  &:hover {
     transform: scale(1.05);
-  }
-  
-  /* Modal Styling */
-  .modal {
-    display: none; /* Hide the modal by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    overflow: hidden;
-    img{
-    max-height: 800px;
-
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    img {
+      transform: scale(1.05);
     }
   }
-  
-  .modal.open {
-    display: flex; /* Show the modal when it has the open class */
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+
+  &.open {
+    display: flex;
+    opacity: 1;
   }
-  
+
   .modal-content {
     position: relative;
     max-width: 90%;
@@ -60,22 +41,25 @@
     border-radius: 10px;
     text-align: center;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    img {
+      max-width: 100%;
+      height: auto;
+      max-height: 800px;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .description {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 600;
+    }
   }
-  
-  .modal img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: contain; /* Ensures the image fits inside the container without overflow */
-  }
-  
-  .modal .description {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  .modal .close-btn {
+
+  .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -87,15 +71,14 @@
     cursor: pointer;
     font-size: 1.5rem;
     transition: background-color 0.3s;
+
+    &:hover {
+      background: #d48b95;
+    }
   }
-  
-  .modal .close-btn:hover {
-    background: #d48b95;
-  }
-  
-  /* Swipe buttons */
-  .modal .prev-btn,
-  .modal .next-btn {
+
+  .prev-btn,
+  .next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -106,18 +89,61 @@
     cursor: pointer;
     font-size: 2rem;
     z-index: 2;
+    border-radius: 50%;
   }
-  
-  .modal .prev-btn {
+
+  .prev-btn {
     left: 10px;
   }
-  
-  .modal .next-btn {
+
+  .next-btn {
     right: 10px;
   }
-  
-  .modal .prev-btn:hover,
-  .modal .next-btn:hover {
+
+  .prev-btn:hover,
+  .next-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
-  
+}
+
+body {
+  background-color: #000;
+  font: 1.1em Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+figure {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+figure > img {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+
+figure a {
+  color: black;
+  text-decoration: none;
+}
+
+figcaption {
+  grid-row: 2;
+  grid-column: 1;
+  background-color: rgba(255,255,255,.5);
+  padding: .2em .5em;
+  justify-self: start;
+}
+
+.gallery {
+  column-count: 4;
+  column-gap: 10px;
+  margin: 10px;
+}
