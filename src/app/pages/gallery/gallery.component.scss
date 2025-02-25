@@ -34,9 +34,10 @@
 
   .modal-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
     background: white;
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -87,7 +88,7 @@
     border: none;
     padding: 20px;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1em;
     z-index: 2;
     border-radius: 50%;
   }
@@ -143,6 +144,7 @@ figcaption {
 }
 
 .gallery {
+  background-color: antiquewhite;
   column-count: 4;
   column-gap: 10px;
   margin: 10px;

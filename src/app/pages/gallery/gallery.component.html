@@ -8,7 +8,7 @@
     <button class="prev-btn" (click)="changeImage('prev')">‹</button>
     <img *ngIf="selectedImage" [src]="selectedImage.full" [alt]="selectedImage.description" />
     <button class="next-btn" (click)="changeImage('next')">›</button>
-    <div class="description" *ngIf="selectedImage">{{ selectedImage.description }}</div>
+    <!-- <div class="description" *ngIf="selectedImage">{{ selectedImage.description }}</div> -->
     <button class="close-btn" (click)="closeModal()">×</button>
   </div>
 </div>

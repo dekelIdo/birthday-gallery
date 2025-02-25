@@ -47,6 +47,29 @@ export class GalleryComponent {
     { thumbnail: 'assets/img36.jpg', full: 'assets/img36-large.jpg', description: 'Image 36' },
     { thumbnail: 'assets/img37.jpg', full: 'assets/img37-large.jpg', description: 'Image 37' },
     { thumbnail: 'assets/img38.jpg', full: 'assets/img38-large.jpg', description: 'Image 38' },
+    { thumbnail: 'assets/img39.jpg', full: 'assets/img39-large.jpg', description: 'Image 39' },
+    { thumbnail: 'assets/img40.jpg', full: 'assets/img40-large.jpg', description: 'Image 40' },
+    { thumbnail: 'assets/img41.jpg', full: 'assets/img41-large.jpg', description: 'Image 41' },
+    { thumbnail: 'assets/img42.jpg', full: 'assets/img42-large.jpg', description: 'Image 42' },
+    { thumbnail: 'assets/img43.jpg', full: 'assets/img43-large.jpg', description: 'Image 43' },
+    { thumbnail: 'assets/img44.jpg', full: 'assets/img44-large.jpg', description: 'Image 44' },
+    { thumbnail: 'assets/img45.jpg', full: 'assets/img45-large.jpg', description: 'Image 45' },
+    { thumbnail: 'assets/img46.jpg', full: 'assets/img46-large.jpg', description: 'Image 46' },
+    { thumbnail: 'assets/img47.jpg', full: 'assets/img47-large.jpg', description: 'Image 47' },
+    { thumbnail: 'assets/img48.jpg', full: 'assets/img48-large.jpg', description: 'Image 48' },
+    { thumbnail: 'assets/img49.jpg', full: 'assets/img49-large.jpg', description: 'Image 49' },
+    { thumbnail: 'assets/img50.jpg', full: 'assets/img50-large.jpg', description: 'Image 50' },
+    { thumbnail: 'assets/img51.jpg', full: 'assets/img51-large.jpg', description: 'Image 51' },
+    { thumbnail: 'assets/img52.jpg', full: 'assets/img52-large.jpg', description: 'Image 52' },
+    { thumbnail: 'assets/img53.jpg', full: 'assets/img53-large.jpg', description: 'Image 53' },
+    { thumbnail: 'assets/img54.jpg', full: 'assets/img54-large.jpg', description: 'Image 54' },
+    { thumbnail: 'assets/img55.jpg', full: 'assets/img55-large.jpg', description: 'Image 55' },
+    { thumbnail: 'assets/img56.jpg', full: 'assets/img56-large.jpg', description: 'Image 56' },
+    { thumbnail: 'assets/img57.jpg', full: 'assets/img57-large.jpg', description: 'Image 57' },
+    { thumbnail: 'assets/img58.jpg', full: 'assets/img58-large.jpg', description: 'Image 58' },
+    { thumbnail: 'assets/img59.jpg', full: 'assets/img59-large.jpg', description: 'Image 59' },
+    { thumbnail: 'assets/img60.jpg', full: 'assets/img60-large.jpg', description: 'Image 60' }
+
   ];
 
   selectedImage: any = null;
