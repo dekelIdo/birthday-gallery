@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class GalleryComponent {
   images = [
-    { thumbnail: '../assets/img1.jpg', full: 'assets/img1-large.jpg', description: 'Image 1' },י
+    { thumbnail: '../assets/img1.jpg', full: 'assets/img1-large.jpg', description: 'Image 1' },
     { thumbnail: 'assets/img2.jpg', full: 'assets/img2-large.jpg', description: 'Image 2' },
     { thumbnail: 'assets/img3.jpg', full: 'assets/img3-large.jpg', description: 'Image 3' },
     { thumbnail: 'assets/img4.jpg', full: 'assets/img4-large.jpg', description: 'Image 4' },
