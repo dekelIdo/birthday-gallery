@@ -3,12 +3,12 @@
     <img [src]="image.thumbnail" [alt]="image.description" (click)="openModal(image)" />
   </figure>
 </div>
+
 <div class="modal" [ngClass]="{ 'open': isModalOpen }" (click)="closeModal()">
-  <div class="modal-content" (click)="$event.stopPropagation()">
+  <div class="modal-content" (click)="$event.stopPropagation()" (swipeleft)="changeImage('next')" (swiperight)="changeImage('prev')">
     <button class="prev-btn" (click)="changeImage('prev')">‹</button>
     <img *ngIf="selectedImage" [src]="selectedImage.full" [alt]="selectedImage.description" />
     <button class="next-btn" (click)="changeImage('next')">›</button>
-    <!-- <div class="description" *ngIf="selectedImage">{{ selectedImage.description }}</div> -->
     <button class="close-btn" (click)="closeModal()">×</button>
   </div>
 </div>

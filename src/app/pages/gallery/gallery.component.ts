@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import 'hammerjs';
 
 @Component({
   selector: 'app-gallery',
@@ -91,6 +92,13 @@ export class GalleryComponent {
       this.selectedImage = this.images[(index - 1 + this.images.length) % this.images.length];
     } else {
       this.selectedImage = this.images[(index + 1) % this.images.length];
+    }
+  }
+  onSwipe(event: any) {
+    if (event.deltaX > 0) {
+      this.changeImage('prev'); // Swipe Right
+    } else {
+      this.changeImage('next'); // Swipe Left
     }
   }
 }
