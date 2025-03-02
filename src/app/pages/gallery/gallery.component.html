@@ -1,9 +1,21 @@
-<div class="gallery">
+<!-- Question Modal -->
+<div class="question-modal" *ngIf="isQuestionModalOpen">
+  <div class="modal-content">
+    <p>איפה היה הדייט הראשון שלנו?</p>
+    <input type="text" #userAnswer />
+    <div *ngIf="wrongAnswer" class="error-message" >Invalid answer. Please try again.</div>
+    <button (click)="checkAnswer(userAnswer.value)">Submit</button>
+  </div>
+</div>
+
+<!-- Gallery (Blocked if access not granted) -->
+<div class="gallery" [class.blocked]="!isAccessGranted">
   <figure *ngFor="let image of images" class="image-item">
     <img [src]="image.thumbnail" [alt]="image.description" (click)="openModal(image)" />
   </figure>
 </div>
 
+<!-- Image Modal -->
 <div class="modal" [ngClass]="{ 'open': isModalOpen }" (click)="closeModal()">
   <div class="modal-content" (click)="$event.stopPropagation()" (swipeleft)="changeImage('next')" (swiperight)="changeImage('prev')">
     <button class="prev-btn" (click)="changeImage('prev')">‹</button>

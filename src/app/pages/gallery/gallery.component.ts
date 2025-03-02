@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'hammerjs';
 
@@ -9,7 +9,7 @@ import 'hammerjs';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent {
+export class GalleryComponent implements OnInit {
   images = [
     { thumbnail: 'assets/img1.jpg', full: 'assets/img1-large.jpg', description: 'Image 1' },
     { thumbnail: 'assets/img2.jpg', full: 'assets/img2-large.jpg', description: 'Image 2' },
@@ -75,6 +75,11 @@ export class GalleryComponent {
 
   selectedImage: any = null;
   isModalOpen = false;
+  isQuestionModalOpen = true; // Show question modal on init
+  isAccessGranted = false; // Control access
+  wrongAnswer = false; // Control access
+
+  correctAnswer = "vivino"; // Set your correct 
 
   openModal(image: any) {
     this.selectedImage = image;
@@ -101,4 +106,18 @@ export class GalleryComponent {
       this.changeImage('next'); // Swipe Left
     }
   }
+  ngOnInit() {
+    this.isQuestionModalOpen = true; 
+  }
+  checkAnswer(userAnswer: string) {
+    if (userAnswer === this.correctAnswer || userAnswer === 'ויוינו') {
+      this.isAccessGranted = true;
+      this.isQuestionModalOpen = false;
+      this.wrongAnswer = false
+    }
+    else{
+      this.wrongAnswer = true
+    }
+  }
+  
 }
